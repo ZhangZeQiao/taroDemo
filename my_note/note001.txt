@@ -1,0 +1,16 @@
+# 使用 npm 安装 CLI
+$ npm install -g @tarojs/cli
+
+# 项目初始化,使用命令创建模板项目
+$ taro init myApp
+
+# 默认命令行构建特定平台小程序代码时，都会在.\dist目录下生成特定平台小程序代码
+# 如果把.\config\index.js中的outputRoot: `dist`,改成以下命令行，那么构建时，就会生成一个特定平台名称的文件夹，此文件夹下生成特定平台小程序代码
+$  outputRoot: `dist/${process.env.TARO_ENV}`,
+# process.env.TARO_ENV 目前有 weapp / swan / alipay / h5 / rn / tt / qq / quickapp 八个取值
+
+# 构建微信小程序代码
+$ npm run build:weapp
+$ taro build --type weapp
+# 构建微信小程序代码且实时监听（代码一有变动(保存)，就重新构建代码，如果打开微信开发工具，就可以看到模拟器也会实时刷新）
+# taro build --type weapp --watch
