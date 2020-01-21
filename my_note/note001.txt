@@ -14,3 +14,22 @@ $ npm run build:weapp
 $ taro build --type weapp
 # 构建微信小程序代码且实时监听（代码一有变动(保存)，就重新构建代码，如果打开微信开发工具，就可以看到模拟器也会实时刷新）
 # taro build --type weapp --watch
+
+# 引入MobX状态管理库
+# 官方
+$ npm install -g mobx --save
+# taro版MobX
+$ npm install -g --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+# TODO: 在项目中直接使用下面代码，会报错：Cannot find module '@tarojs/mobx'.
+$ import { xxx } from '@tarojs/mobx'
+# TODO: 只有在项目中执行下面命令行，手动添加module，就可以正常引入，但会不会不够智能？有没有更好的方法解决这个问题？
+$ npm install --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+
+# TODO: 解决使用Code Runner进行TypeScript代码运行测试时遇到的问题
+# 1、Terminal输出乱码问题：在setting.json中加入"code-runner.runInTerminal": true
+# 2、Terminal输出“无法将“ts-node”项识别为 cmdlet、函数、脚本文件或可运行程序的名称...”：npm install -g ts-node、npm install -g typescript
+# 3、Terminal输出“ts-node : 无法加载文件node-global\ts-node.ps1,因为在此系统上禁止运行脚本...”
+#    ① 以管理员身份运行vscode，在vscode的Terminal中进入到项目的根目录
+#    ② 在Terminal执行：get-ExecutionPolicy  显示Restricted（表示状态是禁止的）【受限制的、保密的】
+#    ③ 在Terminal执行：set-ExecutionPolicy RemoteSigned  更改
+#    ④ 在Terminal执行：get-ExecutionPolicy  显示RemoteSigned
