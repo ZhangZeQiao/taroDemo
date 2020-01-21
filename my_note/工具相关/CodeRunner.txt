@@ -1,0 +1,9 @@
+# TODO: 解决使用Code Runner进行TypeScript代码运行测试时遇到的问题
+# 1、Terminal输出乱码问题：在setting.json中加入"code-runner.runInTerminal": true
+# 2、Terminal输出“无法将“ts-node”项识别为 cmdlet、函数、脚本文件或可运行程序的名称...”：npm install -g ts-node、npm install -g typescript
+# 3、Terminal输出“ts-node : 无法加载文件node-global\ts-node.ps1,因为在此系统上禁止运行脚本...”
+#    ① 以管理员身份运行vscode，在vscode的Terminal中进入到项目的根目录
+#    ② 在Terminal执行：get-ExecutionPolicy  显示Restricted（表示状态是禁止的）【受限制的、保密的】
+#    ③ 在Terminal执行：set-ExecutionPolicy RemoteSigned  更改
+#    ④ 在Terminal执行：get-ExecutionPolicy  显示RemoteSigned
+

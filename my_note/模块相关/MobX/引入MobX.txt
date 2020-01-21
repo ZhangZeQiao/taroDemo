@@ -1,0 +1,10 @@
+# 引入MobX状态管理库
+# 官方
+$ npm install -g mobx --save
+# taro版MobX
+$ npm install -g --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+# TODO: 在项目中直接使用下面代码，会报错：Cannot find module '@tarojs/mobx'.
+$ import { xxx } from '@tarojs/mobx'
+# TODO: 只有在项目中执行下面命令行，手动添加module，就可以正常引入，但会不会不够智能？有没有更好的方法解决这个问题？
+$ npm install --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+
