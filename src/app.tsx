@@ -30,6 +30,14 @@ class App extends Component {
     pages: [
       'pages/index/index'
     ],
+    // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
+    permission: {
+      'scope.userLocation': {
+        desc: '你的位置信息将用于小程序位置接口的效果展示'
+      }
+    },
+    // 申明需要后台运行的能力，类型为数组。目前支持以下项目：audio: 后台音乐播放
+    requiredBackgroundModes: ['audio'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
