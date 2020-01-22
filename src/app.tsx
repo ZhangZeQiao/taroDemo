@@ -28,7 +28,8 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
     permission: {
@@ -54,8 +55,8 @@ class App extends Component {
           text: 'index'
         },
         {
-          pagePath: 'pages/index/index',
-          text: 'index'
+          pagePath: 'pages/mine/mine',
+          text: 'mine'
         }
       ]
     }

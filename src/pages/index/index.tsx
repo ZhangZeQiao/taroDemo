@@ -30,6 +30,16 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
+  // ------------- function -------------
+
+  onBtnClick() {
+    this.setState({
+      msg: '点我干啥子！'
+    })
+  }
+
+  // ------------- function -------------
+
   render() {
     return (
       <View className='index'>
@@ -40,12 +50,5 @@ export default class Index extends Component {
           </Button>
       </View>
     )
-  }
-
-  // ------------- function -------------
-  onBtnClick() {
-    this.setState({
-      msg: '点我干啥子！'
-    })
   }
 }
