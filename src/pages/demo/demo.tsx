@@ -31,6 +31,10 @@ export default class Demo extends Component {
         Taro.navigateTo({ url: 'components/media_page' })
     }
 
+    navigateToMapPage() {
+        Taro.navigateTo({ url: 'components/map_page' })
+    }
+
     render() {
         return (
             <View>
@@ -38,6 +42,7 @@ export default class Demo extends Component {
                 <Button onClick={this.navigateToBasePage}>基础内容</Button>
                 <Button onClick={this.navigateToFormPage}>表单组件</Button>
                 <Button onClick={this.navigateToMediaPage}>媒体组件</Button>
+                <Button onClick={this.navigateToMapPage}>地图</Button>
             </View>
         )
     }
