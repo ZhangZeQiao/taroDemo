@@ -19,11 +19,15 @@ export default class Demo extends Component {
         Taro.navigateTo({ url: 'components/view_page' })
     }
 
+    navigateToBasePage() {
+        Taro.navigateTo({ url: 'components/base_page' })
+    }
+
     render() {
         return (
             <View>
                 <Button onClick={this.navigateToViewPage}>视图容器</Button>
-                <Button onClick={this.navigateToViewPage}>基础内容</Button>
+                <Button onClick={this.navigateToBasePage}>基础内容</Button>
             </View>
         )
     }
