@@ -29,6 +29,8 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/index/index',
+      'pages/demo/demo',
+      'pages/demo/components/view_page',
       'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
@@ -47,12 +49,16 @@ class App extends Component {
     },
     tabBar: {
       color: '#f00',
-      backgroundColor: '#ff0',
+      backgroundColor: '#f0f0f0',
       position: 'bottom',
       list: [
         {
           pagePath: 'pages/index/index',
           text: 'index'
+        },
+        {
+          pagePath: 'pages/demo/demo',
+          text: 'demo'
         },
         {
           pagePath: 'pages/mine/mine',
