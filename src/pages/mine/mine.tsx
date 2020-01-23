@@ -4,13 +4,13 @@ import { Clock } from '../../components/Clock'
 
 export default class Mine extends Component {
 
-    config: Config = {
-        navigationBarTitleText: '我的'
-    }
+  config: Config = {
+    navigationBarTitleText: '我的'
+  }
 
-    render() {
-        return (
-            <Clock />
-        )
-    }
+  render() {
+    return (
+      <Clock />
+    )
+  }
 }
