@@ -1,0 +1,63 @@
+Audio
+音频
+属性名	        类型	     默认值	 说明
+src	            String		        要播放音频的资源地址
+controls	    Boolean	    true	是否显示默认播放控件（播放/暂停按钮、播放进度、时间）
+autoplay	    Boolean	    false	是否自动播放
+poster	        String		        音频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效
+initialTime	    Number		        指定音频初始播放位置
+loop	        Boolean	    false	是否循环播放
+muted	        Boolean	    false	是否静音播放
+onPlay	        EventHandle		    当开始/继续播放时触发 play 事件
+onPause	        EventHandle		    当暂停播放时触发 pause 事件
+onEnded	        EventHandle		    当播放到末尾时触发 ended 事件
+onTimeUpdate	EventHandle		    播放进度变化时触发，触发频率 250ms 一次
+onError	        EventHandle		    音频播放出错时触发
+
+Image
+图片
+属性名	    类型	     默认值	         说明
+src	        String		                图片资源地址
+mode	    String	    scaleToFill	    图片裁剪、缩放的模式
+onError	    HandleEvent		            当错误发生时，发布到 AppService 的事件名
+onLoad	    HandleEvent		            当图片载入完毕时，发布到 AppService 的事件名
+lazyLoad	Boolean	    false	        图片懒加载。只针对 page 与 scroll-view 下的 image 有效
+
+
+Video
+视频
+属性名              	类型	默认值	 说明
+src                 	String		    要播放视频的资源地址
+controls            	Boolean	true	是否显示默认播放控件（播放/暂停按钮、播放进度、时间）
+autoplay            	Boolean	false	是否自动播放
+poster              	String		    视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效
+initialTime         	Number		    指定视频初始播放位置
+loop	                Boolean	false	是否循环播放
+muted	                Boolean	false	是否静音播放
+onPlay	                EventHandle		当开始/继续播放时触发 play 事件
+onPause	                EventHandle		当暂停播放时触发 pause 事件
+onEnded	                EventHandle		当播放到末尾时触发 ended 事件
+onTimeUpdate	        EventHandle		播放进度变化时触发。触发频率 250ms 一次
+onError             	EventHandle		视频播放出错时触发
+autoPauseIfNavigate	    Boolean	true	当跳转到其它小程序页面时，是否自动暂停本页面的视频
+autoPauseIfOpenNative	Boolean	true	当跳转到其它微信原生页面时，是否自动暂停本页面的视频
+direction           	Number		    设置全屏时视频的方向，不指定则根据宽高比自动判断
+title	                String		    视频的标题，全屏时在顶部展示
+danmuBtn               	Boolean	false	是否显示弹幕按钮，只在初始化时有效，不能动态变更
+danmuList           	Array <object>	[]	弹幕列表
+duration            	Number		    指定视频时长
+enableDanmu         	Boolean	false	是否展示弹幕，只在初始化时有效，不能动态变更
+enablePlayGesture   	Boolean	false	是否开启播放手势，即双击切换播放/暂停
+enableProgressGesture	Boolean	true	是否开启控制进度的手势
+objectFit           	String	contain	当视频大小与 video 容器大小不一致时，视频的表现形式
+onFullscreenChange  	EventHandle		视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction 有效值为 vertical 或 horizontal
+onProgress          	EventHandle		加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比
+onWaiting           	EventHandle		视频出现缓冲时触发
+playBtnPosition     	String	bottom	播放按钮的位置
+showCenterPlayBtn   	Boolean	true	是否显示视频中间的播放按钮
+showFullscreenBtn	    Boolean	true	是否显示全屏按钮
+showMuteBtn          	Boolean	false	是否显示静音按钮
+showPlayBtn         	Boolean	true	是否显示视频底部控制栏的播放按钮
+showProgress        	Boolean	true	若不设置，宽度大于240时才会显示
+vslideGesture       	Boolean	false	在非全屏模式下，是否开启亮度与音量调节手势（同 pageGesture）
+vslideGestureInFullscreen	Boolean	true	在全屏模式下，是否开启亮度与音量调节手势

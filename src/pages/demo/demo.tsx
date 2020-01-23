@@ -22,9 +22,13 @@ export default class Demo extends Component {
     navigateToBasePage() {
         Taro.navigateTo({ url: 'components/base_page' })
     }
-    
+
     navigateToFormPage() {
         Taro.navigateTo({ url: 'components/form_page' })
+    }
+
+    navigateToMediaPage() {
+        Taro.navigateTo({ url: 'components/media_page' })
     }
 
     render() {
@@ -33,6 +37,7 @@ export default class Demo extends Component {
                 <Button onClick={this.navigateToViewPage}>视图容器</Button>
                 <Button onClick={this.navigateToBasePage}>基础内容</Button>
                 <Button onClick={this.navigateToFormPage}>表单组件</Button>
+                <Button onClick={this.navigateToMediaPage}>媒体组件</Button>
             </View>
         )
     }
