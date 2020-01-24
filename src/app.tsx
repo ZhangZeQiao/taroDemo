@@ -37,6 +37,7 @@ class App extends Component {
       'pages/demo/components/map_page',
       'pages/demo/components/webview_page',
       'pages/demo/api/interaction_page',
+      'pages/demo/api/navigate_page',
       'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
