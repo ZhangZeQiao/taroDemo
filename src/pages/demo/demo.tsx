@@ -15,49 +15,21 @@ export default class Demo extends Component {
   /<Button onClick={this.navigateTo('view/view_page')}>Demo</Button>
   */
 
-  navigateToViewPage() {
-    Taro.navigateTo({ url: 'components/view_page' })
-  }
-
-  navigateToBasePage() {
-    Taro.navigateTo({ url: 'components/base_page' })
-  }
-
-  navigateToFormPage() {
-    Taro.navigateTo({ url: 'components/form_page' })
-  }
-
-  navigateToMediaPage() {
-    Taro.navigateTo({ url: 'components/media_page' })
-  }
-
-  navigateToMapPage() {
-    Taro.navigateTo({ url: 'components/map_page' })
-  }
-
-  navigateToWebViewPage() {
-    Taro.navigateTo({ url: 'components/webview_page' })
-  }
-
-  navigateToInteractionPage() {
-    Taro.navigateTo({ url: 'api/interaction_page' })
-  }
-
-  navigateToNavigatePage() {
-    Taro.navigateTo({ url: 'api/navigate_page' })
+  navigateToPage(targetUrl) {
+    Taro.navigateTo({ url: targetUrl })
   }
 
   render() {
     return (
       <View>
-        <Button onClick={this.navigateToViewPage}>视图容器</Button>
-        <Button onClick={this.navigateToBasePage}>基础内容</Button>
-        <Button onClick={this.navigateToFormPage}>表单组件</Button>
-        <Button onClick={this.navigateToMediaPage}>媒体组件</Button>
-        <Button onClick={this.navigateToMapPage}>地图</Button>
-        <Button onClick={this.navigateToWebViewPage}>WebView</Button>
-        <Button onClick={this.navigateToInteractionPage}>交互</Button>
-        <Button onClick={this.navigateToNavigatePage}>导航</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/view_page')}>视图容器</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/base_page')}>基础内容</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/form_page')}>表单组件</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/media_page')}>媒体组件</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/map_page')}>地图</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/webview_page')}>WebView</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/interaction_page')}>交互</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigate_page')}>导航</Button>
       </View>
     )
   }

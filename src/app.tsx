@@ -61,15 +61,21 @@ class App extends Component {
       list: [
         {
           pagePath: 'pages/index/index',
-          text: 'index'
+          text: 'index',
+          iconPath: './assets/images/taro_logo_white.png',
+          selectedIconPath: './assets/images/taro_logo.png'
         },
         {
           pagePath: 'pages/demo/demo',
-          text: 'demo'
+          text: 'demo',
+          iconPath: './assets/images/taro_logo_white.png',
+          selectedIconPath: './assets/images/taro_logo.png'
         },
         {
           pagePath: 'pages/mine/mine',
-          text: 'mine'
+          text: 'mine',
+          iconPath: './assets/images/taro_logo_white.png',
+          selectedIconPath: './assets/images/taro_logo.png'
         }
       ]
     }

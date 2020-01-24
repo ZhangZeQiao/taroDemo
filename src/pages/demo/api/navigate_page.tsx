@@ -17,6 +17,7 @@ export default class NavigatePage extends Component {
     // Taro.navigateTo({ url: '/pages/demo/demo' }).then(res => console.log(res))
     // 报错：navigateTo:fail can not navigateTo a tabbar page
     // TODO: 打开页面，最好用绝对路径 /pages/xxx/......
+    // TODO: 要打开的页面必须要提前加入app.tsx中的config: Config中的pages属性中
     Taro.navigateTo({ url: '/pages/demo/components/base_page' }).then(res => console.log(res))
   }
 
