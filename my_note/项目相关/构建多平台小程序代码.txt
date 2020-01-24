@@ -15,3 +15,16 @@ $ taro build --type weapp
 # TODO: 构建微信小程序代码且实时监听（代码一有变动(保存)，就重新构建代码，如果打开微信开发工具，就可以看到模拟器也会实时刷新）
 # taro build --type weapp --watch
 
+Taro.ENV_TYPE：
+ENV_TYPE.WEAPP 微信小程序环境
+ENV_TYPE.SWAN 百度小程序环境
+ENV_TYPE.ALIPAY 支付宝小程序环境
+ENV_TYPE.TT 字节跳动小程序环境
+ENV_TYPE.WEB WEB(H5)环境
+ENV_TYPE.RN ReactNative 环境
+ENV_TYPE.QUICKAPP 快应用环境
+ENV_TYPE.QQ QQ小程序 环境
+ENV_TYPE.JD 京东小程序 环境
+
+Taro.getEnv()：
+获取当前环境值，具体值如上 Taro.ENV_TYPE

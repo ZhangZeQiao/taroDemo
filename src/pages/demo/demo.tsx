@@ -39,6 +39,10 @@ export default class Demo extends Component {
     Taro.navigateTo({ url: 'components/webview_page' })
   }
 
+  navigateToInteractionPage() {
+    Taro.navigateTo({ url: 'api/interaction_page' })
+  }
+
   render() {
     return (
       <View>
@@ -48,9 +52,9 @@ export default class Demo extends Component {
         <Button onClick={this.navigateToMediaPage}>媒体组件</Button>
         <Button onClick={this.navigateToMapPage}>地图</Button>
         <Button onClick={this.navigateToWebViewPage}>WebView</Button>
+        <Button onClick={this.navigateToInteractionPage}>交互</Button>
       </View>
     )
   }
-
 
 }
