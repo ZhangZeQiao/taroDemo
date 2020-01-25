@@ -29,7 +29,8 @@ export default class Demo extends Component {
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/map_page')}>地图</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/webview_page')}>WebView</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/interaction_page')}>交互</Button>
-        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigate_page')}>导航</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigate_page')}>页面导航</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigation_page')}>导航栏</Button>
       </View>
     )
   }
