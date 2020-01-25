@@ -1,5 +1,5 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { ScrollView, Button } from '@tarojs/components'
+import { ScrollView, Button, View } from '@tarojs/components'
 
 export default class InteractionPage extends Component {
 
@@ -58,6 +58,24 @@ export default class InteractionPage extends Component {
       tapIndex	Number	用户点击的按钮，从上到下的顺序，从 0 开始 */
   }
 
+  pageScrollTo() {
+    // TODO: 将页面滚动到目标位置。使用方式同 wx.pageScrollTo
+    Taro.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  }
+
+  startPullDownRefresh() {
+    // TODO: 开始下拉刷新。调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。使用方式同 wx.startPullDownRefresh
+    Taro.startPullDownRefresh().then((res) => console.log(res))
+  }
+
+  stopPullDownRefresh() {
+    // TODO: 停止当前页面下拉刷新。
+    Taro.stopPullDownRefresh()
+  }
+
   render() {
     return (
       <ScrollView>
@@ -67,6 +85,24 @@ export default class InteractionPage extends Component {
         <Button onClick={this.hideLoading}>hideLoading</Button>
         <Button onClick={this.showModal}>确认弹窗：showModal</Button>
         <Button onClick={this.showActionSheet}>选择弹窗：showActionSheet</Button>
+        <Button onClick={this.startPullDownRefresh}>startPullDownRefresh</Button>
+        <Button onClick={this.stopPullDownRefresh}>stopPullDownRefresh</Button>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <View>1</View>
+        <Button onClick={this.pageScrollTo}>pageScrollTo</Button>
       </ScrollView>
     )
   }
