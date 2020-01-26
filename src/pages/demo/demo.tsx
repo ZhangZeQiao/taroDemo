@@ -93,6 +93,7 @@ export default class Demo extends Component {
           <Button size='mini' onClick={this.hideTabBar}>hideTabBar</Button>
           <Button size='mini' onClick={this.showTabBar}>showTabBar</Button>
         </View>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/open_page')}>Open Api</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/view_page')}>视图容器</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/base_page')}>基础内容</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/components/form_page')}>表单组件</Button>
