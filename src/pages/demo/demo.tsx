@@ -103,6 +103,7 @@ export default class Demo extends Component {
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/interaction_page')}>交互</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigate_page')}>页面导航</Button>
         <Button onClick={this.navigateToPage.bind(this, '/pages/demo/api/navigation_page')}>导航栏</Button>
+        <Button onClick={this.navigateToPage.bind(this, '/pages/demo/net/net_demo_page')}>Net Demo</Button>
       </View>
     )
   }

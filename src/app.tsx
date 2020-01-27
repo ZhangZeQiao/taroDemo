@@ -40,6 +40,8 @@ class App extends Component {
       'pages/demo/api/navigate_page',
       'pages/demo/api/navigation_page',
       'pages/demo/api/open_page',
+      'pages/demo/net/net_demo_page',
+      'pages/demo/net/websocket_page',
       'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
