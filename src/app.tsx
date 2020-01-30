@@ -7,6 +7,7 @@ import counterStore from './pages/demo/mobx/store/counter'
 import Index from './pages/index'
 import './app.scss'
 
+// Mobx 异常监听
 onError(error => {
   console.log('mobx global error listener:', error)
 })
@@ -59,6 +60,7 @@ class App extends Component {
       'pages/demo/mobx/use_context_page',
       'pages/demo/mobx/use_local_store_page',
       'pages/demo/mobx/class_page',
+      'pages/demo/mobx/static_rendering_page',
       'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
@@ -104,6 +106,23 @@ class App extends Component {
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
+  /* TODO: MobX全局 store 设置：Provider
+      Provider 必须作用于入口文件（即：src/app.js），在其他地方使用无效。
+      不支持嵌套，即全局只能存在一个 Provider。
+
+      在 mobx-react 中，可通过以下方式设置 store：
+      <Provider store1={xxxx} store2={xxxx}>
+        <XXX />
+      </Provider>
+      而在 @tarojs/mobx 中，我们需要使用以下方式设置：
+      const store = {
+        store1: xxxx,
+        store2: xxxx
+      }
+      <Provider store={store}>
+        <XXX />
+      </Provider>
+  */
   render() {
     return (
       <Provider store={store}>

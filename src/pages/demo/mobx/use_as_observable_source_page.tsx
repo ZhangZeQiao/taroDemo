@@ -3,6 +3,7 @@ import { View, Button } from '@tarojs/components'
 import Multiplier from './multiplier'
 
 export default class UseAsObservableSourcePage extends Component {
+
   config: Config = {
     navigationBarTitleText: 'useAsObservableSource 示例'
   }
