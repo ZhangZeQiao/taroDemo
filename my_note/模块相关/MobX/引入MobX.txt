@@ -2,9 +2,56 @@
 # 官方
 $ npm install -g mobx --save
 # taro版MobX
-$ npm install -g --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+$ npm install -g --save mobx@5.15.4 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
 # TODO: 在项目中直接使用下面代码，会报错：Cannot find module '@tarojs/mobx'.
 $ import { xxx } from '@tarojs/mobx'
 # TODO: 只有在项目中执行下面命令行，手动添加module，就可以正常引入，但会不会不够智能？有没有更好的方法解决这个问题？
-$ npm install --save mobx@4.8.0 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+$ npm install --save mobx@5.15.4 @tarojs/mobx @tarojs/mobx-h5 @tarojs/mobx-rn
+
+MobX 简单、可扩展的状态管理
+MobX 为复杂项目中状态管理提供了一种简单高效的机制
+
+MobX 通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。
+MobX 背后的哲学很简单:任何源自应用状态的东西都应该自动地获得。其中包括UI、数据序列化、服务器通讯，等等。
+MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。
+通过使用 @observable 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
+
+Mobx是面向对象的，Mobx从始至终都是一份引用。
+在Mobx中，State就对应业务的最原始状态，通过observable方法，可以使这些状态变得可观察。
+通常支持被observable的类型有三个，分别是Object, Array, Map；对于原始类型，可以使用Obserable.box。
+当某一数据被observable包装后，他返回的其实是被observable包装后的类型。
+
+Mobx中state的设计原则和redux有一点是相同的，那就是尽可能保证state足够小，足够原子。
+这样设计的原则不言而喻，无论是维护性还是性能。那么对于依赖state的数据而衍生出的数据，可以使用computed。
+简而言之，你有一个值，该值的结果依赖于state，并且该值也需要被obserable，那么就使用computed。
+通常应该尽可能的使用计算属性，并且由于其函数式的特点，可以最大化优化性能。
+如果计算属性依赖的state没改变，或者该计算值没有被其他计算值或响应（reaction）使用，computed便不会运行。
+在这种情况下，computed处于暂停状态，此时若该计算属性不再被observable。那么其便会被Mobx垃圾回收。
+
+1、@observable 是一种让数据的变化可以被观察的方法：@observable data 注册一个数据，这个数据将会成为一个可mobx监测的数据
+2、decorator 修饰器只能修饰 类 或 类成员
+3、对可观察的数据做出反应
+@computed 计算：对引入的可观察数据进行处理，返回新的可观察数据（可以将多个可观察数据组合成一个可观察数据）
+@computed get XXX (){
+    return AAA
+}
+computed 是自动监测已注册的数据，如果已注册的数据有改变自动执行这个函数
+不可循环引用
+@autorun 自动运行：修改autorun引用的可观察数据，导致autorun 自动运行（首次加载会自动运行，自动追踪可观察数据）
+@when ：接收两个函数参数，第一个函数根据引入的可观察数据返回一个布尔值，当布尔值为 true 的时候，则执行第二个函数（when 提供了条件执行逻辑）
+@reaction ：接收两个函数参数，第一个函数根据可观察函数，数据变化后，返回一个新的值，该值作为第二个函数的参数
+4、修改可观察数据
+@action 只执行一次
+@action.bound toggle() {}
+注册action ,action里面可以改变mobx注册的数据,从而改变store里的数据
+5、@observer 修饰react组件类
+import { inject, observer } from 'mobx-react';
+真正用到可观察数据的组件才会被 observer 修饰
+6、mobx 自带的 remove 不需要传入id
+7、mobx -- observe spy() toJS() trace()在父组件中调用
+observe 组件及组件成员发生变化
+spy 监控所有的情况的变化
+toJS 将可观察数据，转化成普通数据
+trace(true) 多用于debug调试
+8、@inject 注入需要的store
 

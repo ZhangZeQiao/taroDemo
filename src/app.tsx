@@ -1,7 +1,19 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import Index from './pages/index'
 
+// TODO: MobX Demo
+import { onError, Provider } from '@tarojs/mobx'
+import counterStore from './pages/demo/mobx/store/counter'
+
+import Index from './pages/index'
 import './app.scss'
+
+onError(error => {
+  console.log('mobx global error listener:', error)
+})
+
+const store = {
+  counterStore
+}
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -42,6 +54,11 @@ class App extends Component {
       'pages/demo/api/open_page',
       'pages/demo/net/net_demo_page',
       'pages/demo/net/websocket_page',
+      'pages/demo/mobx/mobx_demo_page',
+      'pages/demo/mobx/use_as_observable_source_page',
+      'pages/demo/mobx/use_context_page',
+      'pages/demo/mobx/use_local_store_page',
+      'pages/demo/mobx/class_page',
       'pages/mine/mine'
     ],
     // 微信小程序接口权限相关设置，微信客户端 7.0.0 及以上版本支持
@@ -89,7 +106,9 @@ class App extends Component {
   // 请勿修改此函数
   render() {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     )
   }
 }
